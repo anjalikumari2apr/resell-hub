@@ -8,16 +8,65 @@ use App\category;
 class categoryControler extends Controller
 {
     public function categorycreate(Request $request){
+    
         $data = [
             'category_name'=>$request->category_name,
             'status'=> $request->status,   
        ];
        category::insert($data);
+       return redirect()->back();
     }
+    //Delete Record
+    public function delete($id){
+        if(!$id){
+            return redirect()->back();
+        }
 
+       $cat_data= category::find($id);
+       if($cat_data){
+        $cat_data->delete();
+       }
+       return redirect()->back();
+       }
+
+   //Edit Data
+   public function edit($id)
+   {
+    if(!$id){
+        return redirect()->back();
+    }
+    $cat_data= category::find($id);
+   if($cat_data){
+    return view('backend.category.edit',compact('cat_data'));
+   }
+   return redirect()->back();
+   }
+
+   //Update Data
+   public function update(Request $request,$id)
+   {
+    if(!$id){
+        return redirect()->back();
+    }
+    $cat_data= category::find($id);
+   if($cat_data){
+    $data=[
+        'category_name'=>$request->category_name,
+        'status'=> $request->status,   
+    ];
+   $cat_data->update($data);
+  return redirect()->route('dispalycate');
+    
+   }
+   return redirect()->back();
+}
+
+
+
+    //Display Data
     public function display(){
-        $data['categories']= category::where('status')->get();
-         return view('backend.category',$data);
+        $data= category::all();
+         return view('backend.category.display',compact('data'));
  
 }
 }

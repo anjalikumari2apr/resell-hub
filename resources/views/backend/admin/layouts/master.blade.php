@@ -93,7 +93,7 @@
 
 
           
-          
+            @yield('content')
 
 
             <!-- Widgets Start -->
@@ -105,6 +105,8 @@
            @include('backend.admin.common.footer')
             <!-- Footer End -->
         </div>
+        </div>
+
         <!-- Content End -->
 
 
