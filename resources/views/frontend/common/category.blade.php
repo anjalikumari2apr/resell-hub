@@ -6,7 +6,7 @@
 
     <div class="cat-card">
       <div class="catcard">
-         <img src="https://tds-images.thedailystar.net/sites/default/files/images/2022/12/27/phones-laptops.jpg"  class="imgg" height="125px" width="125px"></div>
+         <a href="{{route('phones&laptop') }}"><img src="https://tds-images.thedailystar.net/sites/default/files/images/2022/12/27/phones-laptops.jpg"  class="imgg" height="125px" width="125px"></a></div>
          <br>
          <p> Phones & Laptop</p>
 
@@ -14,7 +14,7 @@
 
        <div class="cat-card">
       <div class="catcard">
-         <img src="https://femina.wwmindia.com/content/2020/sep/home-appliances.jpg"  class="imgg" height="125px" width="125px"></div>
+      <a href="{{route('phones&laptop') }}"><img src="https://femina.wwmindia.com/content/2020/sep/home-appliances.jpg"  class="imgg" height="125px" width="125px"></a></div>
          <br>
          <p> Home Appliences </p>
 

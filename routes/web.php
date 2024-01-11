@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 
 
-//Delete Category
+
 
 
 //for login//
@@ -28,6 +28,7 @@ Route::post('/submit','logincontroller@login')->name('user.login');
 // admin routes//
 Route::group(['prefix'=>'admin'],function(){
     Route::view('/dashboard','backend.admin.layouts.master')->name('admindashboard');
+    Route::view('/userinterface','backend.admin.frontend')->name('userinterface');
 });
 
 // buyer routes//
@@ -60,7 +61,9 @@ Route::get('/categoryfetch','sellcontroller@displayData')->name('categoryfetch')
 Route::view('/categoryform','backend.category.category')->name('categoryform');
 Route::post('/category-form','categoryControler@categorycreate')->name('form.category');
 //Display Category
-Route::get('/dispalycate','categoryControler@display')->name('dispalycate');
+Route::get('/dispalycate','categoryControler@display')->name('dispalycate');\
+
+
 //Delete Category
 Route::get('/delete/{id}','categoryControler@delete')->name('cate.delete');
 //Category Edit
@@ -71,5 +74,20 @@ Route::post('/update/{id}','categoryControler@update')->name('cate.update');
 
 
 
+//route for productview//
+Route::view('/productview','frontend.Productview')->name('productview');
 
 
+//route for contact //
+Route::view('/contacts','frontend.contact')->name('frontend.contact');
+
+//route for phone and laptopform//
+Route::view('/phone&laptop','frontend.categoryforms.phones&laptop')->name('phones&laptop');
+
+//route for homeappliences//
+Route::view('/ homeappliences','frontend.categoryforms.homeappliences')->name('homeappliences');
+
+
+
+//route for homeappliences//
+Route::view('/OrderForm','frontend.OrderForm')->name('OrderForm');

@@ -16,18 +16,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <tr>
                                     @forelse($data as $cate)
-                                    <tr>
+                                   
                                         <td> {{$loop->iteration}} </td>
                                         <td>{{$cate->category_name}}</td>
                                         <td>{{$cate->status}}</td>
-                                        <td><a href="{{route('cate.delete',$cate->id)}}" class='btn btn-danger'>Delete</a>
-                                            <a href="{{route('cate.edit',$cate->id)}}" class='btn btn-primary'>edit</a></td>
-                                            </tr>
+                                        <td>
+                                            <a href="{{route('cate.delete',$cate->id)}}"> <button class="btn btn-danger">Delete </button> </a>
+                                            <a href="{{route('cate.edit',$cate->id)}}"> <button class="btn btn-success">Edit </button> </a>
+                                        </td>
+</tr>  
                                         @empty
-                                        <td> No Record Found</td>
+                                        <tr><td> No Record Found</td></tr>
                                         @endforelse
-                                    </tr>
+                                </tr>
                                 </tbody>
                             </table>
                         </div>
