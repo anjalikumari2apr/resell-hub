@@ -27,19 +27,20 @@ Route::post('/submit','logincontroller@login')->name('user.login');
 
 // admin routes//
 Route::group(['prefix'=>'admin'],function(){
-    Route::view('/dashboard','backend.admin.layouts.master')->name('admindashboard');
+    // Route::view('/login','backend.admin.login');
+    Route::view('/dashboard','backend.admin.frontend')->name('admindashboard');
     Route::view('/userinterface','backend.admin.frontend')->name('userinterface');
 });
 
 // buyer routes//
 Route::group(['prefix'=>'buyer'],function(){
-    Route::view('/dashboard','backend.buyer.layouts.master')->name('buyerdashboard');
+    Route::view('/dashboard','backend.buyer.index')->name('buyerdashboard');
 });
 
 
 // buyer routes//
 Route::group(['prefix'=>'seller'],function(){
-    Route::view('/dashboard','backend.seller.layouts.master')->name('sellerdashboard');
+    Route::view('/dashboard','backend.seller.index')->name('sellerdashboard');
 });
 
 

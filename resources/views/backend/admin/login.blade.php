@@ -180,7 +180,7 @@ header .navbar {
          <div class="text">
             LOGIN
          </div>
-         <form action="{{route ('admin.log') }}" method="post">
+         <form action="{{ route('') }}" method="post">
          <div class="field">
                <div class="fas fa-user"></div>
                <input type="text" placeholder="Username" name="Username">

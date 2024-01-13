@@ -251,18 +251,16 @@ body{
         <div class="form-content">
           <div class="login-form">
             <div class="title">Login</div>
-
-
-          <form action="{{ route('user.login')}}" method="post">
+          <form action="{{ route('user.login')}}" method="POST">
             @csrf
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input type="text" placeholder="Enter your email" name="email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" placeholder="Enter your password" required>
+                <input type="password" placeholder="Enter your password" name="password" required>
               </div>
               <div class="text"><a href="#">Forgot password?</a></div>
               <div class="button input-box">

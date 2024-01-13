@@ -12,12 +12,13 @@ class loginseeder extends Seeder
      */
     public function run()
     {
-       // $data=[  'Username'=>'admin',
-       // 'Email'=>'admin@gmail.com',
-        //'Password'=>bcrypt('123456789')
-    //];
+       $data=[  
+        'name'=>'admin',
+       'email'=>'admin@gmail.com',
+        'password'=>bcrypt('123456789')
+    ];
       
-DB::table('logins')->insert($data);
+    DB::table('users')->insert($data);
 
     }
 }
