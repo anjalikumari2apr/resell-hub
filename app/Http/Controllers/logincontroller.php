@@ -9,38 +9,40 @@ use App\User;
 class logincontroller extends Controller
 {
     public function login(Request $request){
-        $request->validate([
-            'email' => 'required | email',
-            'password' => 'required | min:6'
-        ]);
+        // dd($request->all());
 
-        $user = User::where('email',$request->email)->first(); //finding user
-              
+        // $request->validate([
+        //     'email' => 'required | email',
+        //     'password' => 'required | min:6'
+        // ]);
+
+        $email = $request->email;
+        $password = $request->password;
+        $user = user::where('email' ,$email)->first();           
         if($user){
+           
             if($user->password){
-                if(Hash::check($request->password, $user->password)){
+                if (Hash::check($password,$user->password)){
                     Auth::login($user);
+                    return redirect()->route('adminhome');
 
-                    $role = Auth::user()->roles;
-                    // dd($role);
-                    if($role == 'Admin'){
-                        return redirect()->route('admindashboard');
-                    }
-                    elseif($role == 'Buyer'){
-                        return redirect()->route('buyerdashboard');
-                    }
-                    elseif($role == 'Seller'){
-                        return redirect()->route('sellerdashboard');
-                    }
-                    echo'faoiled to log';
-                    die;
-                   }
+                               }   
+                $request->session()->flash('error','please check password');
                 return redirect()->back(); 
-            }         
-            return redirect()->back(); 
-        }
+                       }
+         $request->session()->flash('error','user not found');
         return redirect()->back(); 
-    }
+        }}
 
+
+        //Logout Code
+
+    public function logout(){
+        if(Auth::check()){
+            Auth::logout();
+            return redirect()->route('adminhome');
+        }
+        return redirect()->route('adminlogin');
+    }
     }
 

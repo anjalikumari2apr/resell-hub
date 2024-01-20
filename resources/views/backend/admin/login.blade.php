@@ -168,32 +168,39 @@ header .navbar {
       </style>
    </head>
    <body>
+   @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
    <header>
       <nav class="navbar">
-        <a class="logo" href="http://localhost/resell/public/">Resell Hub<span>.</span></a>
-       
-         
-        
+        <a class="logo" href="http://localhost/resell/public/">Resell Hub<span>.</span></a>     
       </nav>
     </header>
       <div class="login-form">
          <div class="text">
             LOGIN
          </div>
-         <form action="{{ route('') }}" method="post">
+         <form action="{{route('admin.login.submit') }}" method="POST">
+          @csrf
          <div class="field">
                <div class="fas fa-user"></div>
                <input type="text" placeholder="Username" name="Username">
             </div>
             <div class="field">
                <div class="fas fa-envelope"></div>
-               <input type="text" placeholder="Email" name="Email">
+               <input type="text" placeholder="Email" name="email">
             </div>
             <div class="field">
                <div class="fas fa-lock"></div>
-               <input type="password" placeholder="Password" name="Password">
+               <input type="password" placeholder="Password" name="password">
             </div>
-            <button>LOGIN</button>
+            <button type="submit">LOGIN</button>
             
          </form>
       </div>

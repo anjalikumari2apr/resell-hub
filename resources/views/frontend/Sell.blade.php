@@ -1,53 +1,103 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
     <head>
         <meta charset="utf-8">
-        <title>sell</title>
+        <title>sellform</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-</head>
-<form action="{{route('frontend.sell') }}" method="post" enctype="multipart/form-data">
+        <link href="css/style2.css" rel="stylesheet">
+
+       
+    </head>
+
+
+        
+
+<div class="container">
+      <div class="text">
+         Fill the form to upload your post...
+      </div>
+      <form action="{{ route('frontend.sell') }}" method='POST' enctype="multipart/form-data">
     @csrf
-  
-  <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Name</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="name">
-</div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" name="name" required>
+               <div class="underline"></div>
+               <label for=""> Product Name</label>
+            </div>
 
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Price</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="price">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Description</label>
-  <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="" name="description">
-</div>
+            <div class="input-data">
+               <input type="text" name="price" required>
+               <div class="underline"></div>
+               <label for="">Price</label>
+            </div>
+         </div>
 
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">image</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="choose file" name="image">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">image</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="choose file" name="image1">
-</div>
-<div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">image</label>
-  <input type="file" class="form-control" id="exampleFormControlInput1" placeholder="choose file" name="image2">
-</div>
-<select class="form-control" id="exampleSelectGender" name="category_id">
-                        @forelse($categories as $cat)
-                      <option value="{{$cat->id}}">{{$cat->category_name}}</option>
-                      @empty
-                      <option value="">No Category</option>
-                      @endforelse
-                       </select>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" name="email"required>
+               <div class="underline"></div>
+               <label for="">Email</label>
+            </div>
+            <div class="input-data">
+               <input type="text" name="contact" required>
+               <div class="underline"></div>
+               <label for="">Contact</label>
+            </div>
+
+            <div class="input-data">
+               <input type="text" name="address" required>
+               <div class="underline"></div>
+               <label for="">Address</label>
+            </div>
+           </div>
+         
+
+        <div class="form-row">
+         <div class="input-data textarea">
+            <textarea rows="8" cols="80"  name="description" required></textarea>
+            <br />
+            <div class="underline"></div>
+            <label for=""> Description</label>
+            </div>
+          
+          
 <br>
-                    <button type="button" class="btn btn-primary">Submit</button>
+            <div class="input-data" >
+            <input  name="image"  type="file" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+            
+            <label for="">Choose category</label>
+            <br>
+              <select name="category_id" id="">
+             @forelse($categories as $cat)
+               <option value="{{$cat->id}}">{{$cat->category_name}}</option>
+            @empty
+               <option value="">No Category</option>
+             @endforelse
+              </select>
+            </div>
+   
+            <div class="form-row submit-btn">
+               <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="submit" value="submit">
+               </div>
+            </div> 
+          </div>
+        </div>
 </form>
+</div>
+
+ 
 </body>
 </html>
+
+
+     

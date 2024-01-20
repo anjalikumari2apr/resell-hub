@@ -23,15 +23,15 @@
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{('css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{asset('css/style.css')}}" rel="stylesheet">
     </head>
 
     <body>
 
-       
+      
 
         <!-- Navbar start -->
     @include('frontend.common.nav')
@@ -71,12 +71,14 @@
 
 
         <!-- Fruits Shop Start-->
+
         <div class="container-fluid fruite py-5">
+       
             <div class="container py-5">
                 <div class="tab-class text-center">
                     <div class="row g-4">
                         <div class="col-lg-4 text-start">
-                            <h1>Latest Products</h1>
+                            <h1>Latest product</h1>
                         </div>
                        
                     </div>
@@ -87,20 +89,22 @@
                                     <div class="row g-4">
                                        
                                         <div class="col-md-6 col-lg-4 col-xl-3">
+                                       
                                             <div class="rounded position-relative fruite-item">
                                                 <div class="fruite-img">
                                                     <img src="https://fdn.gsmarena.com/imgroot/reviews/19/realme-5/gal/-1024w2/gsmarena_011.jpg" class="img-fluid w-100 rounded-top" alt="">
                                                 </div>
                                                 
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4>Realme 8</h4>
+                                                    <h4>realme</h4>
                                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
                                                         <p class="text-dark fs-5 fw-bold mb-0">Rs.10,000</p>
-                                                        <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-eye me-2 text-primary"></i> Details</a>
+                                                        <a href="{{route('OrderForm')}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-eye me-2 text-primary"></i> Order</a>
                                                     </div>
                                                 </div>
                                             </div>
+                                           
                                         </div>         
                                 </div>
                             </div>
@@ -108,6 +112,7 @@
                     </div>
                 </div>      
             </div>
+           
         </div>
         <!-- Fruits Shop End-->
 

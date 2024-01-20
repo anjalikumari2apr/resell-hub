@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Fruitables - Vegetable Website Template</title>
+        <title>Contact Us</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -178,10 +178,28 @@
                             </div>
                         </div>
                         <div class="col-lg-7">
-                            <form action="" class="">
-                                <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name">
-                                <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email">
-                                <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your Message"></textarea>
+                        <form action="{{route('complaint.create') }}" method="POST">
+                                    @csrf
+                                    @if($errors->first('username'))
+                                            <span style='color:red;'>This field is reduired.</span>
+                                            @endif
+                                <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Your Name" name="username">
+                               
+                                @if($errors->first('email'))
+                                            <span style='color:red;'>This field is reduired.</span>
+                                            @endif
+                                <input type="email" class="w-100 form-control border-0 py-3 mb-4" placeholder="Enter Your Email" name="email">
+                                
+                                @if($errors->first('role'))
+                                            <span style='color:red;'>This field is reduired.</span>
+                                            @endif
+                                <input type="text" class="w-100 form-control border-0 py-3 mb-4" placeholder="Buyer or Seller" name="role">
+                               
+                                @if($errors->first('review'))
+                                            <span style='color:red;'>This field is reduired.</span>
+                                            @endif
+                                <textarea class="w-100 form-control border-0 mb-4" rows="5" cols="10" placeholder="Your complaint" name="review"></textarea>
+                               
                                 <button class="w-100 btn form-control border-secondary py-3 bg-white text-primary " type="submit">Submit</button>
                             </form>
                         </div>
@@ -190,14 +208,14 @@
                                 <i class="fas fa-map-marker-alt fa-2x text-primary me-4"></i>
                                 <div>
                                     <h4>Address</h4>
-                                    <p class="mb-2">123 Street New York.USA</p>
+                                    <p class="mb-2">123 Street Birgunj.Nepal</p>
                                 </div>
                             </div>
                             <div class="d-flex p-4 rounded mb-4 bg-white">
                                 <i class="fas fa-envelope fa-2x text-primary me-4"></i>
                                 <div>
                                     <h4>Mail Us</h4>
-                                    <p class="mb-2">info@example.com</p>
+                                    <p class="mb-2">anjalikumari@gmail.com</p>
                                 </div>
                             </div>
                             <div class="d-flex p-4 rounded bg-white">

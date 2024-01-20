@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>orderform</title>
+        <title>Fruitables - Vegetable Website Template</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -31,11 +31,15 @@
 
     <body>
 
-        
+        <!-- Spinner Start -->
+        <div id="spinner" class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" role="status"></div>
+        </div>
+        <!-- Spinner End -->
 
 
-        <!-- Navbar start -->
-        @include('frontend.common.nav')
+         <!-- Navbar start -->
+         @include('frontend.common.nav')
         <!-- Navbar End -->
 
 
@@ -145,7 +149,90 @@
                                             <th scope="col">Total</th>
                                         </tr>
                                     </thead>
-                                    
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="d-flex align-items-center mt-2">
+                                                    <img src="img/vegetable-item-2.jpg" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                </div>
+                                            </th>
+                                            <td class="py-5">Awesome Brocoli</td>
+                                            <td class="py-5">$69.00</td>
+                                            <td class="py-5">2</td>
+                                            <td class="py-5">$138.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="d-flex align-items-center mt-2">
+                                                    <img src="img/vegetable-item-5.jpg" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                </div>
+                                            </th>
+                                            <td class="py-5">Potatoes</td>
+                                            <td class="py-5">$69.00</td>
+                                            <td class="py-5">2</td>
+                                            <td class="py-5">$138.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                                <div class="d-flex align-items-center mt-2">
+                                                    <img src="img/vegetable-item-3.png" class="img-fluid rounded-circle" style="width: 90px; height: 90px;" alt="">
+                                                </div>
+                                            </th>
+                                            <td class="py-5">Big Banana</td>
+                                            <td class="py-5">$69.00</td>
+                                            <td class="py-5">2</td>
+                                            <td class="py-5">$138.00</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                            </th>
+                                            <td class="py-5"></td>
+                                            <td class="py-5"></td>
+                                            <td class="py-5">
+                                                <p class="mb-0 text-dark py-3">Subtotal</p>
+                                            </td>
+                                            <td class="py-5">
+                                                <div class="py-3 border-bottom border-top">
+                                                    <p class="mb-0 text-dark">$414.00</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                            </th>
+                                            <td class="py-5">
+                                                <p class="mb-0 text-dark py-4">Shipping</p>
+                                            </td>
+                                            <td colspan="3" class="py-5">
+                                                <div class="form-check text-start">
+                                                    <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-1" name="Shipping-1" value="Shipping">
+                                                    <label class="form-check-label" for="Shipping-1">Free Shipping</label>
+                                                </div>
+                                                <div class="form-check text-start">
+                                                    <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-2" name="Shipping-1" value="Shipping">
+                                                    <label class="form-check-label" for="Shipping-2">Flat rate: $15.00</label>
+                                                </div>
+                                                <div class="form-check text-start">
+                                                    <input type="checkbox" class="form-check-input bg-primary border-0" id="Shipping-3" name="Shipping-1" value="Shipping">
+                                                    <label class="form-check-label" for="Shipping-3">Local Pickup: $8.00</label>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">
+                                            </th>
+                                            <td class="py-5">
+                                                <p class="mb-0 text-dark text-uppercase py-3">TOTAL</p>
+                                            </td>
+                                            <td class="py-5"></td>
+                                            <td class="py-5"></td>
+                                            <td class="py-5">
+                                                <div class="py-3 border-bottom border-top">
+                                                    <p class="mb-0 text-dark">$135.00</p>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                             <div class="row g-4 text-center align-items-center justify-content-center border-bottom py-3">
@@ -193,7 +280,9 @@
 
 
         <!-- Footer Start -->
+       
         @include('frontend.common.footer')
+      
         <!-- Footer End -->
 
         <!-- Copyright Start -->

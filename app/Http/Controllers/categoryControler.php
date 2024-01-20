@@ -69,4 +69,12 @@ class categoryControler extends Controller
          return view('backend.category.display',compact('data'));
  
 }
+
+     //Display Data
+     public function dispcate(){
+        $data['categories']= category::all();
+         return view('frontend.Sell',$data);
+ 
+}
+
 }

@@ -5,7 +5,7 @@
                     <div class="top-link pe-2">
                         <a href="#" class="text-white"><small class="text-white mx-2">Privacy Policy</small>/</a>
                         <a href="#" class="text-white"><small class="text-white mx-2">Terms of Use</small>/</a>
-                        <a href="#" class="text-white"><small class="text-white ms-2">Register Complaints</small></a>
+                        <a href="{{route('complaint') }}" class="text-white"><small class="text-white ms-2">Register Complaints</small></a>
                         <br>
                     </div>
                 </div>
@@ -21,13 +21,12 @@
                         <div class="navbar-nav mx-auto">
                             <a href="http://localhost/resell-hub/public/" class="nav-item nav-link active">Home</a>
                             <a href="http://localhost/resell-hub/public/productview" class="nav-item nav-link">Shop</a>
-                            <a href="shop-detail.html" class="nav-item nav-link">Shop Detail</a>
+                            <a href="{{route('testimonial') }}" class="nav-item nav-link">Testimonial</a>
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
-                                    <a href="cart.html" class="dropdown-item">Cart</a>
+                                    <a href="cart.html" class="dropdown-item"></a>
                                     <a href="chackout.html" class="dropdown-item">Chackout</a>
-                                    <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                                     <a href="404.html" class="dropdown-item">404 Page</a>
                                 </div>
                             </div>
@@ -44,7 +43,7 @@
                             <a href="{{ route('loginview') }}" class="my-auto">
                                 <i class="fas fa-user fa-2x"></i>
                             </a>
-                            <a href="#" alt="">
+                            <a href="{{ route('frontendsell') }}" alt="">
 <button class="sell-button" ><i class="fas fa-plus text-primary"></i>Sell</i>
 </button></a>
                         </div>
