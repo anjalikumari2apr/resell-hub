@@ -3,9 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\sellmodel;
 
 class productviewmodel extends Model
 {
-    protected $table='selltable';
+    protected $table='categories';
     protected $guarded = ['id'];
+
+    public function products(){
+        return $this->hasMany(sellmodel::class,'category_id', 'id');
+    }
+
 }

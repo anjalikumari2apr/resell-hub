@@ -69,7 +69,52 @@ class sellcontroller extends Controller
 
     //Display table  Data in UI card//
     public function displayproduct(){
-        $data= sellmodel::all();
+        $id = session()->get('id');   
+        $data= sellmodel::where('user_id',$id)->get(); 
         return view('backend.User.Products.ManageProduct',compact('data'));
     }
+
+
+
+    
+    //Edit Data
+   public function edit($id)
+   {
+    if(!$id){
+        return redirect()->back();
+    }
+    $Product_data= sellmodel::find($id);
+   if($product_data){
+    return view('backend.User.EditProduct',compact('product_data'));
+   }
+   return redirect()->back();
+   }
+
+   //Update Data
+   public function update(Request $request,$id)
+   {
+    if(!$id){
+        return redirect()->back();
+    }
+    $product_data= sellmodel::find($id);
+   if($product_data){
+    $data=[
+        'category_id'=>$request->category_id,
+                'Name'=>$request->name,
+                'Price'=>$request->price,
+                'Email'=>$request->email,
+                'Contact'=>$request->contact,
+                'Address'=>$request->address,
+                'description'=>$request->description,
+                'user_id'=>$request->session()->get('id'),
+                'image' =>$images['image0'] ?? "",
+                'image2'=>$images['image1'] ?? "",
+                'image3'=>$images['image2'] ?? "",
+            ];
+   $product_data->update($data);
+  return redirect()->route('manage-product');
+    
+   }
+   return redirect()->back();
+}
 }

@@ -29,9 +29,7 @@
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
     </head>
 
-    <body>
-
-      
+    <body>      
 
         <!-- Navbar start -->
     @include('frontend.common.nav')
@@ -86,26 +84,28 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
-                                       
+                                        @forelse($datas as $product )                                       
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                        
                                             <div class="rounded position-relative fruite-item">
-                                                <div class="fruite-img">
-                                                    <img src="" class="img-fluid w-100 rounded-top" alt="">
+                                                <div class="fruite-img" style="height:170px;">
+                                                    <img src="{{ asset('Product_Images').'/'.$product->image }}" class="img-fluid w-100 rounded-top" alt="">
                                                 </div>
                                                 
-                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                    <h4>realme</h4>
-                                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod te incididunt</p>
+                                                <div class="p-4 border border-secondary border-top-0 rounded-bottom" style="height:175px;">
+                                                    <h4>{{ $product->Name }}</h4>
+                                                    <p> {{ $product->description }}</p>
                                                     <div class="d-flex justify-content-between flex-lg-wrap">
-                                                        <p class="text-dark fs-5 fw-bold mb-0">Rs.10,000</p>
-                                                        <a href="{{route('OrderForm')}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-eye me-2 text-primary"></i> Order</a>
+                                                        <p class="text-dark fs-5 fw-bold mb-0">Rs.{{ $product->Price }}</p>
+                                                        <a href="{{ route('ProductDetail',$product->id) }}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-eye me-2 text-primary"></i> View More</a>
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                            
-                                        </div>
-                                                 
+                                        </div> 
+                                        @empty
+                                        @endforelse                                                
                                 </div>
                             </div>
                         </div>

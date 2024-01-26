@@ -73,7 +73,7 @@
         <!-- Fruits Shop Start-->
         <div class="container-fluid fruite py-5">
             <div class="container py-5">
-                <h1 class="mb-4"> Buy Our Fresh Products </h1>
+                <h1 class="mb-4"> Buy Our  Products </h1>
                 <div class="row g-4">
                     <div class="col-lg-12">
                         <div class="row g-4">
@@ -225,38 +225,38 @@
                                 </div>
                             </div>
                          
-                           
                             <div class="col-lg-9">
+                                @forelse($categories as $category)
                            
                                 <div class="row g-4 justify-content-center">
+                                    <h3> {{ $category->category_name}} </h3>
+                                    @forelse($category->products as $product)
                                     <div class="col-md-6 col-lg-6 col-xl-4">
-                                    @forelse($data as $product)
-                                        <div class="rounded position-relative fruite-item">
-                                            <div class="fruite-img">
-                                                <img src="{{$product->image}}" class="img-fluid w-100 rounded-top" alt="">
-                                            </div>
-                                            
-                                            <div class="p-4 border border-secondary border-top-0 rounded-bottom">
-                                                <h4>{{$product->Name}}</h4>
-                                                <p>{{$product->description}}</p>
+                                    <div class="rounded position-relative fruite-item">
+                                        <div class="fruite-img" style="height:170px;">
+                                            <img src="{{ asset('Product_Images').'/'.$product->image }}" class="img-fluid w-100 rounded-top" alt="">
+                                        </div>
+                                        <div class="p-4 border border-secondary border-top-0 rounded-bottom" style="height:175px;">
+                                            <h4>{{ $product->Name }}</h4>
+                                            <p>{{ $product->description }}</p>
+                                            <div class="d-flex justify-content-between flex-lg-wrap">
+                                                <p class="text-dark fs-5 fw-bold mb-0"></p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0"></p>
-                                                    <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">Rs.{{$product->Price}}</p> 
-                                                    </div>
-                                                    <a href="{{route('OrderForm')}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Order</a>
-                                                   
+                                                <p class="text-dark fs-5 fw-bold mb-0">Rs.{{ $product->Price }}</p> 
                                                 </div>
+                                                <a href="{{route('OrderForm')}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Order</a>
                                             </div>
                                         </div>
-                                       @empty
-                                       @endforelse
-                                    </div>   
-                                   
+                                    </div>
+                                </div> 
+                                    @empty
+                                    @endforelse
+
                                   </div>
+                                  @empty
+                                  @endforelse
                             </div>
-                        </div>
-                          
+                        </div>                          
                     </div>
                 </div>
             </div>

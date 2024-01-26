@@ -34,26 +34,26 @@
     <div class = "product-imgs">
       <div class = "img-display">
         <div class = "img-showcase">
-          <img src = "https://thea2zfurniture.com/cdn/shop/files/fabulous-the-a2z-furniture-3_800x.jpg?v=1704073637" alt = "shoe image">
-          <img src = "https://thea2zfurniture.com/cdn/shop/files/fabulous-the-a2z-furniture-3_800x.jpg?v=1704073637" alt = "shoe image">
-          <img src = "https://cdn11.bigcommerce.com/s-0i5ra78/images/stencil/1280x1280/products/16360/1094585/rhodes_bed__04200.1633587765.jpg?c=2" alt = "shoe image">
+          <img src ="{{ asset('Product_Images').'/'.$products->image }}" alt = "image missing">
+          <!-- <img src = "" alt = "shoe image">
+          <img src = "" alt = "shoe image"> -->
           
         </div>
       </div>
       <div class = "img-select">
         <div class = "img-item">
           <a href = "#" data-id = "1">
-            <img src = "https://thea2zfurniture.com/cdn/shop/files/fabulous-the-a2z-furniture-3_800x.jpg?v=1704073637" alt = "shoe image">
+            <img src = "{{ asset('Product_Images').'/'.$products->image }}" alt = "image missing">
           </a>
         </div>
         <div class = "img-item">
           <a href = "#" data-id = "2">
-            <img src = "https://thea2zfurniture.com/cdn/shop/files/fabulous-the-a2z-furniture-3_800x.jpg?v=1704073637" alt = "shoe image">
+            <img src = "{{ asset('Product_Images').'/'.$products->image2 }}" alt = "image missing">
           </a>
         </div>
         <div class = "img-item">
           <a href = "#" data-id = "3">
-            <img src = "https://cdn11.bigcommerce.com/s-0i5ra78/images/stencil/1280x1280/products/16360/1094585/rhodes_bed__04200.1633587765.jpg?c=2" alt = "shoe image">
+            <img src = "{{ asset('Product_Images').'/'.$products->image3 }}" alt = "image missing">
           </a>
         </div>
        
@@ -61,7 +61,7 @@
     </div>
     <!-- card right -->
     <div class = "product-content">
-      <h2 class = "product-title">Bed(Furniture)</h2>
+      <h2 class = "product-title">{{ $products->Name }}</h2>
       
       <div class = "product-rating">
         <i class = "fas fa-star"></i>
@@ -73,20 +73,26 @@
       </div>
 
       <div class = "product-price">
-        <p >Price: <span>Rs.25,700</span></p>
+        <p >Price: <span>Rs.{{ $products->Price }}</span></p>
        
       </div>
 
       <div class = "product-detail">
-        <h4>about this product: </h4>
+        <h4>About this product: </h4>
         <ul>
-          <li>Product ID: <span>Black</span></li>
+          <!-- <li>Product ID: <span>Black</span></li>
           <li>Name: <span>in stock</span></li>
-          <li>Category: <span>Shoes</span></li>
+          <li>Category: <span>Shoes</span></li> -->
+
+          <!-- {{$products->id}} -->
+
+          <li>Product Name: <span>{{ $products->Name }}</span></li>
+          <li>Owner Address: <span>{{ $products->Address}}</span></li>
+          <li>Description: <span>{{ $products->description }}</span></li>
           
         </ul>
       </div>  
-      <div class = "product-detail">
+      <!-- <div class = "product-detail">
         <h4>about the seller: </h4>
         <ul>
         <li>Email:</li>
@@ -95,8 +101,10 @@
           <li>Description:</li>
           
         </ul>
-      </div>
-      <div class = "social-links">
+      </div> -->
+
+
+      <!-- <div class = "social-links">
         <p>Also Contact: </p>
         <a href = "#">
           <i class = "fab fa-facebook-f"></i>
@@ -113,13 +121,17 @@
         <a href = "#">
           <i class = "fab fa-pinterest"></i>
         </a>
-      </div>
+      </div> -->
       <div class = "purchase-info">
-       
-        <button type = "button" class = "btn">
+        <form action="{{ route('Product.Order',$products->id) }}" method="POST">
+          @csrf       
+        <!-- <button type = "button" class = "btn">
           Add to wishlist <i class = "fas fa-shopping-cart"></i>
-        </button>
-        <button type = "button" class = "btn">Order</button>
+        </button> -->
+        <a href="">
+         <button type = "submit" class = "btn">Order Now</button>
+        </a>
+        </form>
       </div>
 
       

@@ -30,7 +30,7 @@
                                             <td>{{$review->email}}</td>
                                             <td>{{$review->review}}</td>
                                            
-</tr>
+                                        </tr>
                                         @empty
                                         <tr><td> No Record Found</td></tr>
                                         @endforelse

@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\DB;
 use App\category;
 use App\sellmodel;
 /*
@@ -15,9 +16,10 @@ use App\sellmodel;
 // //to view welcome page//
 
 Route::get('/', function () {
-    // $data['products'] = sellmodel::get();
-    // dd($data);
-    return view('frontend.index');
+    $datas = sellmodel::get();
+    // $datas = sellmodel::get()->latest()->paginate(8);
+    // dd($datas);
+    return view('frontend.index',compact('datas'));
 })->name('productview');
 
 // Route::get('/','FrontendController@data')->name('productview');
@@ -37,6 +39,9 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
     Route::get('/product-view','productview@display')->name('product-view');
 
     Route::get('/delete/{id}','productview@delete')->name('product.delete');//delete products
+    Route::get('/edit/{id}','productview@edit')->name('product.edit');//Product Edit
+    Route::post('/update/{id}','productview@update')->name('product.update');//Product Update
+  
 
     Route::view('/registerview','backend.admin.registerview')->name('registerview');// view register details
     Route::get('/register-view','registercontroller@display')->name('register-view');
@@ -67,9 +72,6 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
  
 
 
-
-
-
 // user routes//
   Route::group(['prefix'=>'User','middleware' => 'auth.login'],function(){
     Route::view('/dashboard','backend.User.index')->name('User.dashboard');//admin home page
@@ -78,13 +80,16 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
     Route::get('/sellform','categoryControler@dispcate')->name('frontendsell');//to view sellform//
     Route::post('sell-create','sellcontroller@sellcreate')->name('backend.User.Products.Sell');//sellcreate//
     Route::get('/manage-product','sellcontroller@displayproduct')->name('manage-product');
+
+    // User Orders
+    Route::get('/Order/Details','OrderCotroller@index')->name('order.details');    
    
    
   });
 
   Route::view('/userdashboard','frontend.index')->name('userdashboard');//to view user dashboard// 
   Route::view('/testimonial','frontend.testimonial')->name('testimonial');//testimonial//
-  Route::post('/testimonial-create','testimonial@create')->name('testimonial.create');//testimonial submit//
+  Route::post('/testimonial-create','testimonial@create')->name('testimonial.create')->middleware('auth.login');;//testimonial submit//
   Route::view('/complaint','frontend.contact')->name('complaint');//complaints//
   Route::post('/complaint-create','complaintscontroller@create')->name('complaint.create');//complaints submit//
   Route::view('/productview','frontend.Productview')->name('productview');//route for productview//
@@ -108,4 +113,6 @@ Route::view('/services','frontend.categoryforms.services')->name('services');//r
 
 
 
-Route::view('/details','frontend.ProductDetail')->name('ProductDetail');//route for //
+Route::get('/Product/details/{id}','ViewMoreController@index')->name('ProductDetail');//route for //
+// Mail to client
+Route::post('Product/Order/{id}','OrderCotroller@order')->name('Product.Order');  //

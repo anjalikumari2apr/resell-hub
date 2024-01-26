@@ -65,7 +65,7 @@ public function register(Request $request){
        //dd($data);
     User::insert($data);
    
-    return redirect()->route('login.page');
+    return redirect()->back();
  }
 
  

@@ -34,8 +34,9 @@ public function index(){
 
    //Display Data in shop form
    public function displaypro(){
-    $data= productviewmodel::all();
-     return view('frontend.productview',compact('data'));
-}
+    $data['categories'] = productviewmodel::with('products')->get();
+    // dd($data);
+     return view('frontend.Productview',$data);
+    }
 
 }

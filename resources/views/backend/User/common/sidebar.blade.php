@@ -26,7 +26,7 @@
                     </div>
                    
 
-                    <a href="#" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Complaints</a>
+                    <a href="{{route('order.details')}}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Order Details</a>
                     <a href="#" testimonialview class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Feedback</a>
                     <a href="{{url('/') }}"class="nav-item nav-link" target="_blank"><i class="fa fa-keyboard me-2"></i>Frontend</a>
                    
