@@ -4,7 +4,7 @@
                     <div class="row g-4">
                         <div class="col-lg-3">
                             <a href="http://localhost/resell/public/userdashboard">
-                                <img src="img/pic2.png" width="400px">
+                                <img src="{{ asset('img/pic2.png') }}" width="400px">
                                
                             </a>
                         </div>

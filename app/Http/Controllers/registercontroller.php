@@ -20,46 +20,61 @@ class registercontroller extends Controller
 
 // start registeration of user//
 public function register(Request $request){
+
+    $request->validate([
+            'name'=>'required',
+            'email' => 'required | email | unique:users',
+            'password' => 'required | min:6'
+        ]);
+
     $data = [
         'name'=>$request->name,
         'email'=> $request->email,
         'password'=>bcrypt($request->password),
-        'roles'=> $request->roles,
+        'roles'=> 'User'
        
    ];
+
+//    dd($data);
    user::insert($data);
   
-   return redirect()->route('loginview');
+   return redirect()->route('login.page');
+    }
+
+
+    //to add admins in admin pannel//
+    public function create(Request $request){
+       
+        //dd($request);
+        $request->validate([
+            'username' => 'required',
+            'email' => 'email|required',
+            'password' => 'required',
+            
+
+            
+        ]);
+
+        $data = [
+            'name'=>$request->username,
+            'email'=> $request->email,
+            'password'=>bcrypt($request->password),
+            'roles'=> 'Admin'
+               
+       ];
+       //dd($data);
+    User::insert($data);
+   
+    return redirect()->route('login.page');
+ }
+
+ 
+//Display testimonial  Data in backend admin//
+    public function dd(){
+    $data= testimonialmodel::all();
+     return view('backend.admin.testimonialview',compact('data'));
 }
-//end user register//
 
-
-// start user login // 
-
-public function login(Request $request){
-
-   
-   
-    $email = $request->email;
-    $password = $request->password;
-    $user = user::where('email' ,$email)->first();       
-    if($user){
-        if($user->password){
-            if (Hash::check($password,$user->password)){
-                Auth::login($user);
-                return redirect()->route('userdashboard');
-
-                           }   
-            $request->session()->flash('error','please check password');
-            return redirect()->back(); 
-                   }
-     $request->session()->flash('error','user not found');
-    return redirect()->back(); 
-    }}
-    //end user login//
-
-
-    //check user login/
     
 }
 

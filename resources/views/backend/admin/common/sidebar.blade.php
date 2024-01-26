@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="{{route('adminhome')}}" class="nav-item nav-link active"><i class="fa fa-home me-2"></i>Home</a>
+                    <a href="{{route('admin.dashboard')}}" class="nav-item nav-link active"><i class="fa fa-home me-2"></i>Home</a>
                     <a href="{{route('register-view')}}" class="nav-item nav-link"><i class="fa fa-pen me-2"></i>Registeration</a>             
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Category</a>
@@ -28,9 +28,12 @@
                     <a href="{{route('complaint-view') }}" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Complaints</a>
                     <a href="{{route('testimonial-view')}}" testimonialview class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Feedback</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Banner</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Setting</a>
+                        
                         <div class="dropdown-menu bg-transparent border-0">
-                           
+                        <a href="#" testimonialview class="nav-item nav-link">Slide</a>
+                        <a href="#" testimonialview class="nav-item nav-link"></i>footer</a>
+                        <a href="#" testimonialview class="nav-item nav-link"></i>Banner</a>
                         </div>
                     </div>
                 </div>

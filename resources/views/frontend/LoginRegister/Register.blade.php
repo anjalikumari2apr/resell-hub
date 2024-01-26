@@ -194,29 +194,23 @@ header .navbar {
          <div class="text">
             Registeration
          </div>
-         <form action="{{route('user.register') }}" method="POST">
+         <form action="{{route('Register.Submit') }}" method="POST">
           @csrf
-         <div class="field">
+          <div class="field">
                <div class="fas fa-user"></div>
-               <input type="text" placeholder="Username" name="name">
+               <input type="text" placeholder="Username" name="name" value="{{ old('name') }}">
             </div>
             <div class="field">
                <div class="fas fa-envelope"></div>
-               <input type="text" placeholder="Email" name="email">
+               <input type="email" placeholder="Email" name="email" value="{{ old('email') }}">
             </div>
             <div class="field">
                <div class="fas fa-lock"></div>
                <input type="password" placeholder="Password" name="password">
-                           </div>
-                <div class="field">
-               <div class="fas fa-lock"></div>
-               <input type="text" placeholder="Admin or user" name="roles">
-                </div>
-
-                         
+            </div>                        
             <button type="submit">Register</button>
             <div class="txt">
-            Already have an account..<a href="{{route('loginview') }}"> Login.</a></div>
+            Already have an account ??<a href="{{route('login.page') }}"> Login.</a></div>
          </form>
       </div>
      

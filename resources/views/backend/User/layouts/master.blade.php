@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Admin pannel</title>
+    <title>User pannel</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -37,24 +37,63 @@
 
 
         <!-- Sidebar Start -->
-       @include('backend.seller.common.sidebar')
+       @include('backend.User.common.sidebar')
         <!-- Sidebar End -->
 
 
         <!-- Content Start -->
         <div class="content">
             <!-- Navbar Start -->
-           @include('backend.seller.common.nav')
+           @include('backend.User.common.nav')
             <!-- Navbar End -->
 
 
             <!-- Sale & Revenue Start -->
-            @yield('content')
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-line fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Today User</p>
+                                <h6 class="mb-0">$1234</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total user</p>
+                                <h6 class="mb-0">$1234</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-area fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Today feedback</p>
+                                <h6 class="mb-0">$1234</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
+                            <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                            <div class="ms-3">
+                                <p class="mb-2">Total complaints</p>
+                                <h6 class="mb-0">$1234</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- Sale & Revenue End -->
 
 
           
-          
+            @yield('content')
 
 
             <!-- Widgets Start -->
@@ -63,9 +102,11 @@
 
 
             <!-- Footer Start -->
-           @include('backend.seller.common.footer')
+           @include('backend.User.common.footer')
             <!-- Footer End -->
         </div>
+        </div>
+
         <!-- Content End -->
 
 

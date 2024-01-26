@@ -6,6 +6,7 @@ use App\sellmodel;
 
 class category extends Model
 {
+   protected $table='categories';
    protected $guarded = ['id'];
 
    public function products(){

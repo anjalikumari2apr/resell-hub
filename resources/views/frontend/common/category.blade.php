@@ -6,7 +6,7 @@
 
     <div class="cat-card">
       <div class="catcard">
-         <a href="{{route('phones&laptop') }}"><img src="https://tds-images.thedailystar.net/sites/default/files/images/2022/12/27/phones-laptops.jpg"  class="imgg" height="125px" width="125px"></a></div>
+         <!-- <a href="{{route('phones&laptop') }}"><img src="https://tds-images.thedailystar.net/sites/default/files/images/2022/12/27/phones-laptops.jpg"  class="imgg" height="125px" width="125px"></a>--></div> 
          <br>
          <p> Phones & Laptop</p>
 

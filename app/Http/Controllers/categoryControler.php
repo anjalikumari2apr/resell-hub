@@ -73,7 +73,7 @@ class categoryControler extends Controller
      //Display Data
      public function dispcate(){
         $data['categories']= category::all();
-         return view('frontend.Sell',$data);
+         return view('backend.User.Products.Sell',$data);
  
 }
 

@@ -31,4 +31,11 @@ public function index(){
    }
    return redirect()->back();
    }
+
+   //Display Data in shop form
+   public function displaypro(){
+    $data= productviewmodel::all();
+     return view('frontend.productview',compact('data'));
+}
+
 }

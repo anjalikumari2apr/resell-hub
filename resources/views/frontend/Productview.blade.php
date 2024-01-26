@@ -18,15 +18,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+        <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
-        <link href="css/style.css" rel="stylesheet">
+        <link href="{{asset('css/style.css') }}" rel="stylesheet">
     </head>
 
     <body>
@@ -224,13 +224,13 @@
                                     </div>
                                 </div>
                             </div>
-                            @forelse($categories as $category)
-                            <h1>{{$category->category_name}}</h1>
+                         
+                           
                             <div class="col-lg-9">
                            
                                 <div class="row g-4 justify-content-center">
                                     <div class="col-md-6 col-lg-6 col-xl-4">
-                                    @forelse($category->products as $product)
+                                    @forelse($data as $product)
                                         <div class="rounded position-relative fruite-item">
                                             <div class="fruite-img">
                                                 <img src="{{$product->image}}" class="img-fluid w-100 rounded-top" alt="">
@@ -240,20 +240,23 @@
                                                 <h4>{{$product->Name}}</h4>
                                                 <p>{{$product->description}}</p>
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
-                                                    <p class="text-dark fs-5 fw-bold mb-0">{{$product->Price}}</p>
-                                                    <a href="#" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Add to cart</a>
+                                                    <p class="text-dark fs-5 fw-bold mb-0"></p>
+                                                    <div class="d-flex justify-content-between flex-lg-wrap">
+                                                    <p class="text-dark fs-5 fw-bold mb-0">Rs.{{$product->Price}}</p> 
+                                                    </div>
+                                                    <a href="{{route('OrderForm')}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Order</a>
+                                                   
                                                 </div>
                                             </div>
                                         </div>
-                                        @empty
-                                     @endforelse
+                                       @empty
+                                       @endforelse
                                     </div>   
                                    
                                   </div>
                             </div>
                         </div>
-                          @empty
-                           @endforelse
+                          
                     </div>
                 </div>
             </div>
@@ -293,13 +296,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{ asset('lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('lib/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
     </body>
 
 </html>

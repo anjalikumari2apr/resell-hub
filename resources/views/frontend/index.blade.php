@@ -18,12 +18,12 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
         <!-- Libraries Stylesheet -->
-        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="{{asset('lib/lightbox/css/lightbox.min.css')}}" rel="stylesheet">
+        <link href="{{asset('lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
 
         <!-- Customized Bootstrap Stylesheet -->
-        <link href="{{('css/bootstrap.min.css')}}" rel="stylesheet">
+        <link href="{{asset('css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Template Stylesheet -->
         <link href="{{asset('css/style.css')}}" rel="stylesheet">
@@ -65,20 +65,19 @@
 
 
         <!-- Featurs Section Start -->
-       @include('frontend.common.category')
+       <!-- include('frontend.common.category') -->
   
         <!-- Featurs Section End -->
 
 
-        <!-- Fruits Shop Start-->
-
+        <!-- Contents Start-->
         <div class="container-fluid fruite py-5">
        
             <div class="container py-5">
                 <div class="tab-class text-center">
                     <div class="row g-4">
                         <div class="col-lg-4 text-start">
-                            <h1>Latest product</h1>
+                            <h1>Latest Products</h1>
                         </div>
                        
                     </div>
@@ -92,7 +91,7 @@
                                        
                                             <div class="rounded position-relative fruite-item">
                                                 <div class="fruite-img">
-                                                    <img src="https://fdn.gsmarena.com/imgroot/reviews/19/realme-5/gal/-1024w2/gsmarena_011.jpg" class="img-fluid w-100 rounded-top" alt="">
+                                                    <img src="" class="img-fluid w-100 rounded-top" alt="">
                                                 </div>
                                                 
                                                 <div class="p-4 border border-secondary border-top-0 rounded-bottom">
@@ -105,16 +104,19 @@
                                                 </div>
                                             </div>
                                            
-                                        </div>         
+                                        </div>
+                                                 
                                 </div>
                             </div>
                         </div>
-                    </div>
+
+                    </div>                    
+
                 </div>      
             </div>
            
         </div>
-        <!-- Fruits Shop End-->
+        <!-- Contents End-->
 
 
        
@@ -311,13 +313,13 @@
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="{{asset('lib/easing/easing.min.js') }}"></script>
+    <script src="{{asset('lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{asset('lib/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{asset('lib/owlcarousel/owl.carousel.min.js') }}"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
     </body>
 
 </html>

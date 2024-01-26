@@ -19,7 +19,7 @@ body{
   text-align: center;
   align-items: center;
   justify-content: center;
-  background-image: url("https://wallpaperaccess.com/full/4893706.jpg");
+  background-image: url("https://www.corewebvitals.io/static/img/s/defer-background-images.jpg");
 }
 .login-form{
   position: relative;
@@ -190,7 +190,7 @@ header .navbar {
          <div class="text">
             LOGIN
          </div>
-         <form action="{{route('user.login.submit') }}" method="POST">
+         <form action="{{route('login.submit') }}" method="POST">
           @csrf
          <div class="field">
                <div class="fas fa-user"></div>
@@ -206,7 +206,7 @@ header .navbar {
             </div>
             <button type="submit">LOGIN</button>
             <div class="txt">
-              Don't have an account? <a href="{{route('userregister') }}"> Register..<a>
+              Don't have an account? <a href="{{route('Register.View') }}"> Register..<a>
          </form>
       </div>
      
