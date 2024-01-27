@@ -244,7 +244,7 @@
                                                 <div class="d-flex justify-content-between flex-lg-wrap">
                                                 <p class="text-dark fs-5 fw-bold mb-0">Rs.{{ $product->Price }}</p> 
                                                 </div>
-                                                <a href="{{route('OrderForm')}}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> Order</a>
+                                                <a href="{{ route('ProductDetail',$product->id) }}" class="btn border border-secondary rounded-pill px-3 text-primary"><i class="fa fa-shopping-bag me-2 text-primary"></i> View More</a>
                                             </div>
                                         </div>
                                     </div>

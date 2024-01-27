@@ -30,7 +30,7 @@
                                     <td>{{$order->product_id}}</td>
                                     <td>{{$order->order_no}}</td>
                                     <td><a href="">
-                                        <button class="btn btn-danger">Delete Order</button>
+                                        <button class="btn btn-danger">Cancel Order</button>
                                     </a></td>
                                 </tr>
                                     @empty

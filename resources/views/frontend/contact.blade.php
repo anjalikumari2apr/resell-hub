@@ -76,82 +76,12 @@
   
  
     
-       <div class="containerr"> 
-        <div class="card-wrapper">
-          <div class="card profile-two">
-            <div class="card-image profile-img--two">
-          <img src="https://images.meesho.com/images/products/260512908/htal6_512.jpg" alt="profile two">
-            </div>
-
-        <ul class="social-icons">
-          <li>
-            <a href="">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fab fa-dribbble"></i>
-            </a>
-          </li>
-        </ul>
-
-            <div class="details jane">
-            <h2>Anjali Kumari
-              <br>
-              <span class="job-title">web Designer</span>
-            </h2>
-      </div>
+       
     </div>
     
   </div>
  
- <div class="card-wrapper">
-          <div class="card profile-two">
-            <div class="card-image profile-img--two">
-          <img src="https://img.alicdn.com/i4/3894624861/O1CN01zwcPYE1lmNlZMNxZZ_!!3894624861.jpg_500x500.jpg_.webp" alt="profile two">
-            </div>
-
-        <ul class="social-icons">
-          <li>
-            <a href="">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <i class="fab fa-dribbble"></i>
-            </a>
-          </li>
-        </ul>
-
-            <div class="details jane">
-            <h2>Pooja Sarraf
-              <br>
-              <span class="job-title">UI Designer</span>
-            </h2>
-      </div>
- </div>
+ 
 
 </div>
 </div>
@@ -173,8 +103,7 @@
                         <div class="col-lg-12">
                             <div class="h-100 rounded">
                                 <iframe class="rounded w-100" 
-                                style="height: 400px;" src="https://www.google.com/search?q=google+map+nepal&oq=google+map&gs_lcrp=EgZjaHJvbWUqDQgDEAAYgwEYsQMYgAQyDggAEEUYJxg7GIAEGIoFMg8IARBFGDkYgwEYsQMYgAQyBggCEEUYQDINCAMQABiDARixAxiABDIGCAQQRRg8MgYIBRBFGDwyBggGEEUYPDIGCAcQBRhA0gEINDk5NGowajeoAgCwAgA&sourceid=chrome&ie=UTF-8" 
-                                loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                style="height: 400px;" src="https://www.google.com/maps/embed/v1/place?key=&q=Space+Needle,Seattle+WA" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                             </div>
                         </div>
                         <div class="col-lg-7">

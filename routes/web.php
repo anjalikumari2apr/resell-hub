@@ -100,16 +100,16 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
 
 
 
-//route for categoryview form//
-Route::get('/phone-laptop','Catviewcontroller@phones')->name('phones&laptop');//route for phone and laptopform//
-Route::get('/home-appliences','Catviewcontroller@homeappliences')->name('homeappliences');//route for homeappliences//
-Route::view('/propertysell','frontend.categoryforms.propertysell')->name('propertysell');//route for Ptoperty for sell//
-Route::view('/appartmentrent','frontend.categoryforms.appartmentrent')->name('appartmentrent');//route for Ptoperty for rent//
-Route::view('/dresses','frontend.categoryforms.dresses')->name('dresses');//route for  dresses material//
-Route::view('/furniture','frontend.categoryforms.furniture')->name('furniture');//route for furniture//
-Route::view('/vehicles','frontend.categoryforms.vehicles')->name('vehicles');//route for vehicles//
-Route::view('/animals','frontend.categoryforms.animals')->name('animals');//route for animals//
-Route::view('/services','frontend.categoryforms.services')->name('services');//route for animals//
+// //route for categoryview form//
+// Route::get('/phone-laptop','Catviewcontroller@phones')->name('phones&laptop');//route for phone and laptopform//
+// Route::get('/home-appliences','Catviewcontroller@homeappliences')->name('homeappliences');//route for homeappliences//
+// Route::view('/propertysell','frontend.categoryforms.propertysell')->name('propertysell');//route for Ptoperty for sell//
+// Route::view('/appartmentrent','frontend.categoryforms.appartmentrent')->name('appartmentrent');//route for Ptoperty for rent//
+// Route::view('/dresses','frontend.categoryforms.dresses')->name('dresses');//route for  dresses material//
+// Route::view('/furniture','frontend.categoryforms.furniture')->name('furniture');//route for furniture//
+// Route::view('/vehicles','frontend.categoryforms.vehicles')->name('vehicles');//route for vehicles//
+// Route::view('/animals','frontend.categoryforms.animals')->name('animals');//route for animals//
+// Route::view('/services','frontend.categoryforms.services')->name('services');//route for animals//
 
 
 

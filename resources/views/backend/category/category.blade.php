@@ -13,10 +13,7 @@
                                     <input type="text" class="form-control" name="category_name" placeholder=" name..">
                                 </div>
 
-                                <div class="mb-3">
-                                    <label  class="form-label">Category Image</label>
-                                    <input type="file" class="form-control" name="category_image" placeholder=" image--">
-                                </div>
+                               
                                 <div class="mb-3">
                                     <label  class="form-label">status</label>
                                     <select name="status" >

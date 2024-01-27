@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Fruitables - Vegetable Website Template</title>
+        <title>View more</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="" name="keywords">
         <meta content="" name="description">
@@ -34,26 +34,26 @@
     <div class = "product-imgs">
       <div class = "img-display">
         <div class = "img-showcase">
-          <img src ="{{ asset('Product_Images').'/'.$products->image }}" alt = "image missing">
-          <!-- <img src = "" alt = "shoe image">
-          <img src = "" alt = "shoe image"> -->
+          <img src ="{{ asset('Product_Images').'/'.$products->image }}" alt = "image missing" style="height:350px;">
+          <img src = "{{ asset('Product_Images').'/'.$products->image2 }}" alt = "image missing" style="height:350px;">
+          <img src = "{{ asset('Product_Images').'/'.$products->image3 }}" alt = "image missing" style="height:350px;">
           
         </div>
       </div>
       <div class = "img-select">
         <div class = "img-item">
           <a href = "#" data-id = "1">
-            <img src = "{{ asset('Product_Images').'/'.$products->image }}" alt = "image missing">
+            <img src = "{{ asset('Product_Images').'/'.$products->image }}" alt = "image missing" style="height:150px;width:150px;">
           </a>
         </div>
         <div class = "img-item">
           <a href = "#" data-id = "2">
-            <img src = "{{ asset('Product_Images').'/'.$products->image2 }}" alt = "image missing">
+            <img src = "{{ asset('Product_Images').'/'.$products->image2 }}" alt = "image missing" style="height:150px;width:150px;">
           </a>
         </div>
         <div class = "img-item">
           <a href = "#" data-id = "3">
-            <img src = "{{ asset('Product_Images').'/'.$products->image3 }}" alt = "image missing">
+            <img src = "{{ asset('Product_Images').'/'.$products->image3 }}" alt = "image missing" style="height:150px;width:150px;">
           </a>
         </div>
        
