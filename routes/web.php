@@ -89,7 +89,7 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
 
   Route::view('/userdashboard','frontend.index')->name('userdashboard');//to view user dashboard// 
   Route::view('/testimonial','frontend.testimonial')->name('testimonial');//testimonial//
-  Route::post('/testimonial-create','testimonial@create')->name('testimonial.create')->middleware('auth.login');;//testimonial submit//
+  Route::post('/testimonial-create','testimonial@create')->name('testimonial.create')->middleware('auth.login');//testimonial submit//
   Route::view('/complaint','frontend.contact')->name('complaint');//complaints//
   Route::post('/complaint-create','complaintscontroller@create')->name('complaint.create');//complaints submit//
   Route::view('/productview','frontend.Productview')->name('productview');//route for productview//

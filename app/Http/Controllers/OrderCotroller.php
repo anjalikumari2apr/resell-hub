@@ -32,7 +32,7 @@ class OrderCotroller extends Controller
                 Mail::to(\auth()->user()->email)->send(new OrderMail($orderNo, $product));
                 return redirect()->route('User.dashboard');           
         }else{
-            return redirect('login.page');
+            return redirect()->route('login.page');
         }
     }
 
