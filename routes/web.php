@@ -91,7 +91,7 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
   Route::view('/testimonial','frontend.testimonial')->name('testimonial');//testimonial//
   Route::post('/testimonial-create','testimonial@create')->name('testimonial.create')->middleware('auth.login');//testimonial submit//
   Route::view('/complaint','frontend.contact')->name('complaint');//complaints//
-  Route::post('/complaint-create','complaintscontroller@create')->name('complaint.create');//complaints submit//
+  Route::post('/complaint-create','complaintscontroller@create')->name('complaint.create')->middleware('auth.login');//complaints submit//
   Route::view('/productview','frontend.Productview')->name('productview');//route for productview//
   Route::get('/pro-view','productview@displaypro')->name('pro-view');
   
@@ -99,20 +99,7 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
   Route::view('/OrderForm','frontend.OrderForm')->name('OrderForm');//route for orderform//
 
 
+Route::get('/Product/details/{id}','ViewMoreController@index')->name('ProductDetail');//route for view more//
 
-// //route for categoryview form//
-// Route::get('/phone-laptop','Catviewcontroller@phones')->name('phones&laptop');//route for phone and laptopform//
-// Route::get('/home-appliences','Catviewcontroller@homeappliences')->name('homeappliences');//route for homeappliences//
-// Route::view('/propertysell','frontend.categoryforms.propertysell')->name('propertysell');//route for Ptoperty for sell//
-// Route::view('/appartmentrent','frontend.categoryforms.appartmentrent')->name('appartmentrent');//route for Ptoperty for rent//
-// Route::view('/dresses','frontend.categoryforms.dresses')->name('dresses');//route for  dresses material//
-// Route::view('/furniture','frontend.categoryforms.furniture')->name('furniture');//route for furniture//
-// Route::view('/vehicles','frontend.categoryforms.vehicles')->name('vehicles');//route for vehicles//
-// Route::view('/animals','frontend.categoryforms.animals')->name('animals');//route for animals//
-// Route::view('/services','frontend.categoryforms.services')->name('services');//route for animals//
-
-
-
-Route::get('/Product/details/{id}','ViewMoreController@index')->name('ProductDetail');//route for //
 // Mail to client
 Route::post('Product/Order/{id}','OrderCotroller@order')->name('Product.Order');  //

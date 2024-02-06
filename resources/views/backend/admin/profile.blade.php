@@ -34,7 +34,7 @@
                                             <td>{{auth()->check() ? auth()->user()->password :''}}</td>
                                             <td>{{auth()->check() ? auth()->user()->image :''}}</td>
                                             
-                                            <td> <a href="{{route('product.delete','$register->id')}}"> <button class="btn btn-danger">Delete </button> </a> </td> 
+                                            <td> <a href="{{route('product.edit','$register->id')}}"> <button class="btn btn-info">Edit </button> </a> </td> 
                                     </tr>
                                            
                                             
