@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\productviewmodel;
+use App\sellmodel;
 
 class productview extends Controller
 {
     //Display Data
     public function display(){
-        $data= productviewmodel::all();
+        $data= sellmodel::all();
          return view('backend.admin.product',compact('data'));
 }
 
 public function index(){
-    $data['selltable'] = Revision:: latest()->paginate(15);
+    $data['selltable'] = sellmodel:: latest()->paginate(15);
     return view('product-view',$data);
   }
 

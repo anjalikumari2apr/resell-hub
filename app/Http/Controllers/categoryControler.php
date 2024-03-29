@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\category;
+use App\sellmodel;
 
 class categoryControler extends Controller
 {
@@ -77,4 +78,21 @@ class categoryControler extends Controller
  
 }
 
+// search products
+public function search(Request $request){
+    // dd($request->all());
+    $searchTerm=$request->search;
+    $query= sellmodel::query();
+    if($searchTerm){
+        $query->where('Name','LIKE','%'.$searchTerm.'%')
+        ->orwhere('Price','LIKE','%'.$searchTerm.'%')
+        ->orwhere('description','LIKE','%'.$searchTerm.'%')
+        ->orwhere('Address','LIKE','%'.$searchTerm.'%');
+        $data['categories']=$query->get();
+        //  dd($data); 
+        return view('frontend.result',$data);
+}else{
+return redirect()->back();
+}
+}
 }

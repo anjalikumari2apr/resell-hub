@@ -24,6 +24,9 @@ Route::get('/', function () {
 
 // Route::get('/','FrontendController@data')->name('productview');
 
+//Search Result route
+Route::get('/result','categoryControler@search')->name('Search.Result');
+
 //Login & Register routes
 Route::view('/Login','frontend.LoginRegister.Login')->name('login.page'); //view login//
 Route::post('/Submit','logincontroller@login')->name('login.submit'); //submit login/
@@ -39,7 +42,7 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
     Route::get('/product-view','productview@display')->name('product-view');
 
     Route::get('/delete/{id}','productview@delete')->name('product.delete');//delete products
-    Route::get('/edit/{id}','productview@edit')->name('product.edit');//Product Edit
+   
     Route::post('/update/{id}','productview@update')->name('product.update');//Product Update
   
 
@@ -55,9 +58,22 @@ Route::post('/Reg/Submit','registercontroller@register')->name('Register.Submit'
      Route::view('/AddAdmin','backend.admin.AddAdmin')->name('AddAdmin');// view Add Admin//
      Route::post('/Admin-create','registercontroller@create')->name('Admin.Create');//Add Admin//
 
+     //Edit Profile 
      Route::get('/Admin-Profile','ProfileController@displayAdmin')->name('Admin.Profile');//Profile Admin//
+     Route::get('/edit/{id}','ProfileControlle@edit')->name('Admin.edit');//Product Edit
 
     Route::get('/logout','logincontroller@logout')->name('logout'); //logout
+
+     //admin Setting
+     //to update all sliders//
+     Route::view('/slider-view','backend.admin.Setting.Slide.AddImage')->name('slider-view');// view addslider form //
+    Route::post('/slider-create','SettingController@create')->name('slider-create');
+
+    Route::view('/complaint','backend.admin.Setting.Slide.display')->name('DisplayImg');// view Slider image details
+    Route::get('/DisplayImg','SettingController@display')->name('Display-Img');
+
+    Route::get('/edit/{id}','SettingController@edit')->name('image.edit');//slide image Edit
+    Route::post('/update/{id}','SettingController@update')->name('image.update');//Product Update
   });
 
 
@@ -103,3 +119,8 @@ Route::get('/Product/details/{id}','ViewMoreController@index')->name('ProductDet
 
 // Mail to client
 Route::post('Product/Order/{id}','OrderCotroller@order')->name('Product.Order');  //
+
+
+ //search Product
+ Route::get('/search','categoryControler@search')->name('frontend.search');
+   

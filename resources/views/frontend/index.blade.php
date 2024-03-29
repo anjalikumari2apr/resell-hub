@@ -38,6 +38,8 @@
 
 
         <!-- Modal Search Start -->
+       <form action='{{route("frontend.search")}}' method='get'>
+        @csrf
         <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content rounded-0">
@@ -47,13 +49,14 @@
                     </div>
                     <div class="modal-body d-flex align-items-center">
                         <div class="input-group w-75 mx-auto d-flex">
-                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
-                            <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                            <input type="text" class="form-control p-3" placeholder="Search here" aria-describedby="search-icon-1" name="search">
+                           <button class="btn btn-secondary" type="submit" style="background-color: #f26522; border-color: f26522"><i class="fa fa-search"></i></button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+       </form>
         <!-- Modal Search End -->
 
 
@@ -84,7 +87,7 @@
                             <div class="row g-4">
                                 <div class="col-lg-12">
                                     <div class="row g-4">
-                                        @forelse($datas as $product )                                       
+                                     @forelse($datas as $product )                                       
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                        
                                             <div class="rounded position-relative fruite-item">

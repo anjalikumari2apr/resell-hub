@@ -31,7 +31,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Setting</a>
                         
                         <div class="dropdown-menu bg-transparent border-0">
-                        <a href="#" testimonialview class="nav-item nav-link">Slide</a>
+                        <a href="{{route('slider-view')}}" testimonialview class="nav-item nav-link">Slide</a>
+                        <a href="{{route('Display-Img')}}" testimonialview class="nav-item nav-link">Display_Slider</a>
                         <a href="#" testimonialview class="nav-item nav-link"></i>footer</a>
                         <a href="#" testimonialview class="nav-item nav-link"></i>Banner</a>
                         </div>
